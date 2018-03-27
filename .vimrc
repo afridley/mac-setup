@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off    " required
+" required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -63,18 +64,38 @@ Plugin 'raimondi/delimitmate'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'skielbasa/vim-material-monokai'
 Plugin 'hzchirs/vim-material'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'nelsyeung/twig.vim'
+Plugin 'Shougo/neocomplcache'
+Plugin 'groenewege/vim-markdown-preview'
+Plugin 'joshdick/onedark.vim'
+Plugin 'tsiemens/vim-aftercolors'
 
 set background=dark
+" Line Below Activates True Colors
 set termguicolors
 " colorscheme quantum
 " let g:airline_theme='quantum'
- colorscheme vim-material
- let g:airline_theme='material'
+" colorscheme vim-material
+" let g:airline_theme='material'
 " colorscheme material-monokai
 " let g:airline_theme='materialmonokai'
-let g:materialmonokai_italic=1
+" let g:materialmonokai_italic=1
+
+colorscheme onedark
+let g:airline_theme='onedark'
+let g:onedark_terminal_italics=1
+
+
 set relativenumber
 set clipboard=unnamedplus
-let g:airline_powerline_fonts = 1
-map <silent> <C-n> :NERDTreeFocus<CR>
+set linebreak
+" let g:airline_powerline_fonts = 1
+hi Normal ctermbg=none
+hi NonText ctermbg=none
+map <silent> <C-k> :NERDTreeFocus<CR>
+map <F5> :setlocal spell! spelllang=en_us<CR>
 syntax on
+
+highlight Comments guifg=red ctermfg=red 
+

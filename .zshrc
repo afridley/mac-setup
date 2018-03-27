@@ -58,6 +58,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(
   git
 )
@@ -66,7 +67,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/usr/local/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -93,6 +94,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+plugins=(zsh-syntax-highlighting)
+
 function homestead() {
  	( cd ~/Sites/Homestead && vagrant $* )
 }
@@ -103,3 +106,8 @@ function homestead() {
 # export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 alias craftman="/Users/x2/.craftman/bin/craftman"
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+source /Users/afridley/Sites/nerd-craft/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
