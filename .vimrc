@@ -70,10 +70,45 @@ Plugin 'Shougo/neocomplcache'
 Plugin 'groenewege/vim-markdown-preview'
 Plugin 'joshdick/onedark.vim'
 Plugin 'tsiemens/vim-aftercolors'
+Plugin 'alvan/vim-closetag'
+
+"--------------------------------
+
+" use indentation of previous line
+set autoindent
+" use intelligent indentation for C
+set smartindent
+" configure tabwidth and insert spaces instead of tabs
+set tabstop=4        " tab width is 4 spaces
+set shiftwidth=4     " indent also with 4 spaces
+set expandtab        " expand tabs to spaces
+" wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
+set textwidth=120
+" turn syntax highlighting on
+set t_Co=256
+syntax on
+" colorscheme wombat256
+" turn line numbers on
+set number
+" highlight matching braces
+set showmatch
+" intelligent comments
+set comments=sl:/*,mb:\ *,elx:\ */
+
+" Install OmniCppComplete like described on http://vim.wikia.com/wiki/C++_code_completion
+" This offers intelligent C++ completion when typing ‘.’ ‘->’ or <C-o>
+" Load standard tag files
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/gl
+set tags+=~/.vim/tags/sdl
+set tags+=~/.vim/tags/qt4
+
+
 
 set background=dark
 " Line Below Activates True Colors
 set termguicolors
+set t_Co=256
 " colorscheme quantum
 " let g:airline_theme='quantum'
 " colorscheme vim-material
@@ -95,7 +130,18 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 map <silent> <C-k> :NERDTreeFocus<CR>
 map <F5> :setlocal spell! spelllang=en_us<CR>
-syntax on
 
 highlight Comments guifg=red ctermfg=red 
+
+" Enable CursorLine
+ set cursorline
+"
+" " Default Colors for CursorLine
+ highlight  CursorLine ctermbg=Black ctermfg=None
+"
+" " Change Color when entering Insert Mode
+ autocmd InsertEnter * highlight  CursorLine ctermbg=None ctermfg=Yellow
+"
+" " Revert Color to default when leaving Insert Mode
+autocmd InsertLeave * highlight  CursorLine ctermbg=Black ctermfg=None
 
